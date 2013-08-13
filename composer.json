@@ -1,0 +1,23 @@
+{
+    "name": "zoopcommerce/pixie",
+    "type": "composer-installer",
+    "description": "custom composer installers for Zoop packages",
+    "license": "MIT",
+    "keywords": [
+        "zoop",
+        "composer",
+        "installer"
+    ],
+    "homepage": "http://github.com/zoopcommerce/pixie",
+    "autoload": {
+        "psr-0": {
+            "Zoop\\Pixie\\": "src"
+        }
+    },
+    "extra": {
+        "class": [
+            "Zoop\\Pixie\\HavokInstaller",
+            "Zoop\\Pixie\\MystiqueInstaller"
+        ]
+    }
+}
