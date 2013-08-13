@@ -16,8 +16,8 @@
     },
     "extra": {
         "class": [
-            "Zoop\\Mimic\\HavokInstaller",
-            "Zoop\\Mimic\\MystiqueInstaller"
+            "Zoop\\Pixie\\HavokInstaller",
+            "Zoop\\Pixie\\MystiqueInstaller"
         ]
     }
 }
