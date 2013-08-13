@@ -4,7 +4,6 @@ namespace Zoop\Pixie;
 
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
-use Composer\Installer\LibraryInstaller;
 
 class HavokInstaller extends LibraryInstaller
 {
