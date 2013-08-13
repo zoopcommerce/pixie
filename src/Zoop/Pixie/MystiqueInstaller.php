@@ -2,12 +2,10 @@
 
 namespace Zoop\Pixie;
 
-use Composer\Installer\LibraryInstaller;
 use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Package\PackageInterface;
-use Composer\Util\Filesystem;
 
-class MystiqueInstaller extends LibraryInstaller
+class MystiqueInstaller extends AbstractInstaller
 {
 
     /**
@@ -24,13 +22,17 @@ class MystiqueInstaller extends LibraryInstaller
     public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
         parent::install($repo, $package);
+        $this->add();
+    }
 
-        if ($this->composer->getPackage()) {
-            $extra = $this->composer->getPackage()->getExtra();
-            if (!empty($extra['zoop-public-path'])) {
-                //symlink();
-            }
-        }
+    /**
+     * {@inheritDoc}
+     */
+    public function update(InstalledRepositoryInterface $repo, PackageInterface $initial, PackageInterface $target)
+    {
+        $this->remove();
+        parent::update($repo, $package);
+        $this->add();
     }
 
     /**
@@ -38,6 +40,29 @@ class MystiqueInstaller extends LibraryInstaller
      */
     public function uninstall(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
+        $this->remove();
         parent::uninstall($repo, $package);
+    }
+
+
+    protected function add(){
+        if ($this->composer->getPackage()) {
+            $extra = $this->composer->getPackage()->getExtra();
+            if (!empty($extra['zoop-js-path'])) {
+                $this->link(
+                    getcwd() . '/' . $extra['zoop-js-path'] . '/mystique',
+                    $this->vendorDir . '/zoopcommerce/mystique/js/mystique'
+                );
+            }
+        }
+    }
+
+    protected function remove(){
+        if ($this->composer->getPackage()) {
+            $extra = $this->composer->getPackage()->getExtra();
+            if (!empty($extra['zoop-js-path'])) {
+                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . '/mystique');
+            }
+        }
     }
 }
