@@ -2,8 +2,9 @@
 
 namespace Zoop\Pixie;
 
+use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Package\PackageInterface;
-use Composer\Installer\LibraryInstaller;
+use Composer\Util\Filesystem;
 
 class MystiqueInstaller extends LibraryInstaller
 {
