@@ -1,12 +1,15 @@
 {
     "name": "zoopcommerce/pixie",
     "type": "composer-installer",
-    "description": "custom composer installers for Zoop packages",
+    "description": "custom composer installers for dojo, havok, mystique and others",
     "license": "MIT",
     "keywords": [
         "zoop",
         "composer",
-        "installer"
+        "installer",
+        "dojo",
+        "havok",
+        "mystique"
     ],
     "homepage": "http://github.com/zoopcommerce/pixie",
     "autoload": {

@@ -12,7 +12,7 @@ class JsInstaller extends AbstractInstaller
      */
     public function supports($packageType)
     {
-        return $packageType === 'zoop-havok';
+        return $packageType === 'zoop-js';
     }
 
     /**
@@ -21,7 +21,7 @@ class JsInstaller extends AbstractInstaller
     public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
         parent::install($repo, $package);
-        $this->add();
+        $this->add($package);
     }
 
     /**
@@ -29,9 +29,9 @@ class JsInstaller extends AbstractInstaller
      */
     public function update(InstalledRepositoryInterface $repo, PackageInterface $initial, PackageInterface $target)
     {
-        $this->remove();
-        parent::update($repo, $package);
-        $this->add();
+        $this->remove($initial);
+        parent::update($repo, $initial, $target);
+        $this->add($target);
     }
 
     /**
@@ -39,28 +39,28 @@ class JsInstaller extends AbstractInstaller
      */
     public function uninstall(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
-        $this->remove();
+        $this->remove($package);
         parent::uninstall($repo, $package);
     }
 
 
-    protected function add(){
+    protected function add($package){
         if ($this->composer->getPackage()) {
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
                 $this->link(
-                    getcwd() . '/' . $extra['zoop-js-path'] . '/havok',
-                    $this->vendorDir . '/zoopcommerce/havok'
+                    getcwd() . '/' . $extra['zoop-js-path'] . '/' . explode('/', $package->getPrettyName())[0],
+                    $this->getInstallPath($package)
                 );
             }
         }
     }
 
-    protected function remove(){
+    protected function remove($package){
         if ($this->composer->getPackage()) {
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
-                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . '/havok');
+                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . explode('/', $package->getPrettyName())[0]);
             }
         }
     }

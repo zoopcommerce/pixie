@@ -31,7 +31,7 @@ class MystiqueInstaller extends AbstractInstaller
     public function update(InstalledRepositoryInterface $repo, PackageInterface $initial, PackageInterface $target)
     {
         $this->remove();
-        parent::update($repo, $package);
+        parent::update($repo, $initial, $target);
         $this->add();
     }
 
