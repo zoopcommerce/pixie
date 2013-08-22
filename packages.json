@@ -1,0 +1,272 @@
+{
+    "packages": {
+        "dojo/dijit": {
+            "1.8.0": {
+                "name": "dojo/dijit",
+                "version": "1.8.0",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dijit",
+                    "reference": "1.8.0"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.1": {
+                "name": "dojo/dijit",
+                "version": "1.8.1",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dijit",
+                    "reference": "1.8.1"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.2": {
+                "name": "dojo/dijit",
+                "version": "1.8.2",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dijit",
+                    "reference": "1.8.2"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.3": {
+                "name": "dojo/dijit",
+                "version": "1.8.3",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dijit",
+                    "reference": "1.8.3"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.9.1": {
+                "name": "dojo/dijit",
+                "version": "1.9.1",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dijit",
+                    "reference": "1.9.1"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            }
+        },
+        "dojo/dojo": {
+            "1.8.0": {
+                "name": "dojo/dojo",
+                "version": "1.8.0",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dojo",
+                    "reference": "1.8.0"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.1": {
+                "name": "dojo/dojo",
+                "version": "1.8.1",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dojo",
+                    "reference": "1.8.1"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.2": {
+                "name": "dojo/dojo",
+                "version": "1.8.2",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dojo",
+                    "reference": "1.8.2"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.3": {
+                "name": "dojo/dojo",
+                "version": "1.8.3",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dojo",
+                    "reference": "1.8.3"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+			"1.9.1": {
+                "name": "dojo/dojo",
+                "version": "1.9.1",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dojo",
+                    "reference": "1.9.1"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            }
+        },
+        "dojo/dojox": {
+            "1.8.0": {
+                "name": "dojo/dojox",
+                "version": "1.8.0",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dojox",
+                    "reference": "1.8.0"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.1": {
+                "name": "dojo/dojox",
+                "version": "1.8.1",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dojox",
+                    "reference": "1.8.1"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.2": {
+                "name": "dojo/dojox",
+                "version": "1.8.2",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dojox",
+                    "reference": "1.8.2"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.3": {
+                "name": "dojo/dojox",
+                "version": "1.8.3",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dojox",
+                    "reference": "1.8.3"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.9.1": {
+                "name": "dojo/dojox",
+                "version": "1.9.1",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/dojox",
+                    "reference": "1.9.1"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            }
+        },
+        "dojo/util": {
+            "1.8.0": {
+                "name": "dojo/util",
+                "version": "1.8.0",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/util",
+                    "reference": "1.8.0"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.1": {
+                "name": "dojo/util",
+                "version": "1.8.1",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/util",
+                    "reference": "1.8.1"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.2": {
+                "name": "dojo/util",
+                "version": "1.8.2",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/util",
+                    "reference": "1.8.2"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.8.3": {
+                "name": "dojo/util",
+                "version": "1.8.3",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/util",
+                    "reference": "1.8.3"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            },
+            "1.9.1": {
+                "name": "dojo/util",
+                "version": "1.9.1",
+                "source": {
+                    "type": "git",
+                    "url": "http://github.com/dojo/util",
+                    "reference": "1.9.1"
+                },
+                "type": "zoop-js",
+                "require": {
+                    "zoopcommerce/pixie": "*"
+                }
+            }
+        }
+    }
+}
