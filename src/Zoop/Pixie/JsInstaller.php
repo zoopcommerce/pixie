@@ -5,7 +5,7 @@ namespace Zoop\Pixie;
 use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Package\PackageInterface;
 
-class HavokInstaller extends AbstractInstaller
+class JsInstaller extends AbstractInstaller
 {
     /**
      * {@inheritDoc}
@@ -52,18 +52,6 @@ class HavokInstaller extends AbstractInstaller
                     getcwd() . '/' . $extra['zoop-js-path'] . '/havok',
                     $this->vendorDir . '/zoopcommerce/havok'
                 );
-                $this->link(
-                    getcwd() . '/' . $extra['zoop-js-path'] . '/dojo',
-                    $this->vendorDir . '/dojo/dojo'
-                );
-                $this->link(
-                    getcwd() . '/' . $extra['zoop-js-path'] . '/dijit',
-                    $this->vendorDir . '/dojo/dijit'
-                );
-                $this->link(
-                    getcwd() . '/' . $extra['zoop-js-path'] . '/utils',
-                    $this->vendorDir . '/dojo/utils'
-                );
             }
         }
     }
@@ -73,9 +61,6 @@ class HavokInstaller extends AbstractInstaller
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
                 $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . '/havok');
-                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . '/dojo');
-                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . '/dijit');
-                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . '/utils');
             }
         }
     }
