@@ -49,7 +49,7 @@ class JsInstaller extends AbstractInstaller
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
                 $this->link(
-                    getcwd() . '/' . $extra['zoop-js-path'] . '/' . explode('/', $package->getPrettyName())[0],
+                    getcwd() . '/' . $extra['zoop-js-path'] . '/' . explode('/', $package->getPrettyName())[1],
                     $this->getInstallPath($package)
                 );
             }
@@ -60,7 +60,7 @@ class JsInstaller extends AbstractInstaller
         if ($this->composer->getPackage()) {
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
-                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . explode('/', $package->getPrettyName())[0]);
+                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . explode('/', $package->getPrettyName())[1]);
             }
         }
     }
