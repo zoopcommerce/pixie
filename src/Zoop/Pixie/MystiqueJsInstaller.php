@@ -5,14 +5,15 @@ namespace Zoop\Pixie;
 use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Package\PackageInterface;
 
-class JsInstaller extends AbstractInstaller
+class MystiqueInstaller extends AbstractInstaller
 {
+
     /**
      * {@inheritDoc}
      */
     public function supports($packageType)
     {
-        return $packageType === 'zoop-js';
+        return $packageType === 'zoop-mystique-js';
     }
 
     /**
@@ -21,7 +22,7 @@ class JsInstaller extends AbstractInstaller
     public function install(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
         parent::install($repo, $package);
-        $this->add($package);
+        $this->add();
     }
 
     /**
@@ -29,9 +30,9 @@ class JsInstaller extends AbstractInstaller
      */
     public function update(InstalledRepositoryInterface $repo, PackageInterface $initial, PackageInterface $target)
     {
-        $this->remove($initial);
+        $this->remove();
         parent::update($repo, $initial, $target);
-        $this->add($target);
+        $this->add();
     }
 
     /**
@@ -39,30 +40,30 @@ class JsInstaller extends AbstractInstaller
      */
     public function uninstall(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
-        $this->remove($package);
+        $this->remove();
         parent::uninstall($repo, $package);
     }
 
 
-    protected function add($package)
+    protected function add()
     {
         if ($this->composer->getPackage()) {
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
                 $this->link(
-                    getcwd() . '/' . $extra['zoop-js-path'] . '/' . explode('/', $package->getPrettyName())[1],
-                    $this->getInstallPath($package)
+                    getcwd() . '/' . $extra['zoop-js-path'] . '/mystique',
+                    $this->vendorDir . '/zoopcommerce/mystique-js'
                 );
             }
         }
     }
 
-    protected function remove($package)
+    protected function remove()
     {
         if ($this->composer->getPackage()) {
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
-                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . explode('/', $package->getPrettyName())[1]);
+                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . '/mystique');
             }
         }
     }
