@@ -13,7 +13,7 @@ class AbstractInstaller extends LibraryInstaller
             mkdir(dirname($target), 0777, true);
         }
 
-        if (!function_exists('symlink') || !symlink($target, $source)){
+        if (! function_exists('symlink') || !symlink($target, $source)) {
             //if symlink fails, like on old windows systems, then restort to copy
             $this->recurseCopy($source, $target);
         }
@@ -25,7 +25,7 @@ class AbstractInstaller extends LibraryInstaller
             return;
         }
 
-        if (is_link($target)){
+        if (is_link($target)) {
             unlink($target);
         } else {
             //if symlink fails, like on old windows systems
@@ -34,7 +34,8 @@ class AbstractInstaller extends LibraryInstaller
         }
     }
 
-    public function recurseDelete($path) {
+    public function recurseDelete($path)
+    {
         $it = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator($path),
             \RecursiveIteratorIterator::CHILD_FIRST
@@ -50,16 +51,16 @@ class AbstractInstaller extends LibraryInstaller
         }
     }
 
-    protected function recurseCopy($src, $dst) {
+    protected function recurseCopy($src, $dst)
+    {
         $dir = opendir($src);
         @mkdir($dst);
-        while(false !== ( $file = readdir($dir)) ) {
+        while (false !== ( $file = readdir($dir))) {
             if (( $file != '.' ) && ( $file != '..' )) {
-                if ( is_dir($src . '/' . $file) ) {
-                    $this->recurseCopy($src . '/' . $file,$dst . '/' . $file);
-                }
-                else {
-                    copy($src . '/' . $file,$dst . '/' . $file);
+                if (is_dir($src . '/' . $file)) {
+                    $this->recurseCopy($src . '/' . $file, $dst . '/' . $file);
+                } else {
+                    copy($src . '/' . $file, $dst . '/' . $file);
                 }
             }
         }

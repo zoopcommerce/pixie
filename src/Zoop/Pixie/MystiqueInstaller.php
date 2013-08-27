@@ -45,23 +45,25 @@ class MystiqueInstaller extends AbstractInstaller
     }
 
 
-    protected function add(){
+    protected function add()
+    {
         if ($this->composer->getPackage()) {
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
                 $this->link(
-                    getcwd() . '/' . $extra['zoop-js-path'] . '/mystique',
-                    $this->vendorDir . '/zoopcommerce/mystique/js/mystique'
+                    getcwd() . '/' . $extra['zoop-js-path'] . '/mystique-common',
+                    $this->vendorDir . '/zoopcommerce/mystique'
                 );
             }
         }
     }
 
-    protected function remove(){
+    protected function remove()
+    {
         if ($this->composer->getPackage()) {
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
-                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . '/mystique');
+                $this->unlink(getcwd() . '/' . $extra['zoop-js-path'] . '/mystique-common');
             }
         }
     }
