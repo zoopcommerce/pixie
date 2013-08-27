@@ -17,10 +17,17 @@
             "Zoop\\Pixie\\": "src"
         }
     },
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "1.4.*"
+    },
     "extra": {
         "class": [
             "Zoop\\Pixie\\JsInstaller",
-            "Zoop\\Pixie\\MystiqueInstaller"
+            "Zoop\\Pixie\\MystiqueInstaller",
+            "Zoop\\Pixie\\MystiqueJsInstaller"
         ]
     }
 }
