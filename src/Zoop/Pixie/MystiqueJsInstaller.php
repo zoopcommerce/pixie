@@ -5,7 +5,7 @@ namespace Zoop\Pixie;
 use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Package\PackageInterface;
 
-class MystiqueInstaller extends AbstractInstaller
+class MystiqueJsInstaller extends AbstractInstaller
 {
 
     /**
