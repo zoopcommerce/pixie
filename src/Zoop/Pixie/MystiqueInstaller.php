@@ -51,8 +51,8 @@ class MystiqueInstaller extends AbstractInstaller
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
                 $this->link(
-                    getcwd() . '/' . $extra['zoop-js-path'] . '/mystique-common',
-                    $this->vendorDir . '/zoopcommerce/mystique'
+                    $this->vendorDir . '/zoopcommerce/mystique',
+                    getcwd() . '/' . $extra['zoop-js-path'] . '/mystique-common'
                 );
             }
         }

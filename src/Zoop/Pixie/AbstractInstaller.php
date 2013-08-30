@@ -7,30 +7,41 @@ use Composer\Installer\LibraryInstaller;
 class AbstractInstaller extends LibraryInstaller
 {
 
-    protected function link($target, $source)
+    protected function link($source, $dest)
     {
-        if (!file_exists(dirname($target))) {
-            mkdir(dirname($target), 0777, true);
+        if (!file_exists(dirname($dest))) {
+            mkdir(dirname($dest), 0777, true);
         }
 
-        if (! function_exists('symlink') || !symlink($target, $source)) {
-            //if symlink fails, like on old windows systems, then restort to copy
-            $this->recurseCopy($source, $target);
+        $done = false;
+        if (function_exists('symlink')){
+            try {
+                if (symlink($source, $dest)){
+                    $done = true;
+                }
+            } catch (\Exception $ex) {
+                //symlink failed
+            }
+        }
+
+        if (! $done) {
+            //if symlink fails, like on old windows systems, or some VM shared folders then restort to copy
+            $this->recurseCopy($source, $dest);
         }
     }
 
-    protected function unlink($target)
+    protected function unlink($dest)
     {
-        if (!file_exists($target)) {
+        if (!file_exists($dest)) {
             return;
         }
 
-        if (is_link($target)) {
-            unlink($target);
+        if (is_link($dest)) {
+            unlink($dest);
         } else {
             //if symlink fails, like on old windows systems
-            $this->recurseDelete($target);
-            rmdir($target);
+            $this->recurseDelete($dest);
+            rmdir($dest);
         }
     }
 
@@ -51,16 +62,16 @@ class AbstractInstaller extends LibraryInstaller
         }
     }
 
-    protected function recurseCopy($src, $dst)
+    protected function recurseCopy($source, $dest)
     {
-        $dir = opendir($src);
-        @mkdir($dst);
+        $dir = opendir($source);
+        @mkdir($dest);
         while (false !== ( $file = readdir($dir))) {
             if (( $file != '.' ) && ( $file != '..' )) {
-                if (is_dir($src . '/' . $file)) {
-                    $this->recurseCopy($src . '/' . $file, $dst . '/' . $file);
+                if (is_dir($source . '/' . $file)) {
+                    $this->recurseCopy($source . '/' . $file, $dest . '/' . $file);
                 } else {
-                    copy($src . '/' . $file, $dst . '/' . $file);
+                    copy($source . '/' . $file, $dest . '/' . $file);
                 }
             }
         }

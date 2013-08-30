@@ -50,8 +50,8 @@ class JsInstaller extends AbstractInstaller
             $extra = $this->composer->getPackage()->getExtra();
             if (!empty($extra['zoop-js-path'])) {
                 $this->link(
-                    getcwd() . '/' . $extra['zoop-js-path'] . '/' . explode('/', $package->getPrettyName())[1],
-                    $this->getInstallPath($package)
+                    $this->getInstallPath($package),
+                    getcwd() . '/' . $extra['zoop-js-path'] . '/' . explode('/', $package->getPrettyName())[1]
                 );
             }
         }
