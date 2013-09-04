@@ -61,6 +61,10 @@
                     "url": "http://github.com/dojo/dijit",
                     "reference": "1.9.1"
                 },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/dojo/dijit/archive/1.9.1.zip"
+                },
                 "type": "zoop-js",
                 "require": {
                     "zoopcommerce/pixie": "*"
@@ -120,13 +124,17 @@
                     "zoopcommerce/pixie": "*"
                 }
             },
-			"1.9.1": {
+            "1.9.1": {
                 "name": "dojo/dojo",
                 "version": "1.9.1",
                 "source": {
                     "type": "git",
                     "url": "http://github.com/dojo/dojo",
                     "reference": "1.9.1"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/dojo/dojo/archive/1.9.1.zip"
                 },
                 "type": "zoop-js",
                 "require": {
@@ -195,6 +203,10 @@
                     "url": "http://github.com/dojo/dojox",
                     "reference": "1.9.1"
                 },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/dojo/dojox/archive/1.9.1.zip"
+                },              
                 "type": "zoop-js",
                 "require": {
                     "zoopcommerce/pixie": "*"
@@ -262,6 +274,10 @@
                     "url": "http://github.com/dojo/util",
                     "reference": "1.9.1"
                 },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/dojo/util/archive/1.9.1.zip"
+                },              
                 "type": "zoop-js",
                 "require": {
                     "zoopcommerce/pixie": "*"
